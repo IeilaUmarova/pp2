@@ -3,7 +3,7 @@ import UIKit
 //Step 1:
 let myFirstName: String = "Leila"
 let myLastName: String = "Umarova"
-let myAge: Int = 20
+var myAge: Int = 20
 let myBirthYear: Int = 2005
 let myBirthMonth: String = "May"
 let myHeight: Double = 1.59
@@ -11,8 +11,8 @@ let myWeight: Double = 50
 let isStudent: Bool = true
 
 //Bonus Challenge:
-let currentYear: Int = 2025
-let currentAge: Int = currentYear - myBirthYear
+var currentYear: Int = 2025
+myAge = currentYear - myBirthYear
 
 // Step2:
 let myHobby: String = "Playing piano, drawing buildings, listening music"
@@ -31,7 +31,7 @@ let emoji2: String = "🍹"
 let emoji3: String = "✨"
 
 //Step 3:
-var lifeStory = "My name is \(myFirstName) \(myLastName). I'm \(currentAge). I was burn in \(myBirthYear) in \(myBirthMonth). My height is \(myHeight) and my weight is \(myWeight). I'm currently a student: \(isStudent). I have \(numberOfHobbies) hobbies, these are \(myHobby). My hobbies are creative: \(isHobbyCreative). My favorite number is \(myFavoriteNumber) and my favorite color is \(myFavoriteColor)\(🔵emoji1). Also I have some favorite beverages, these are \(myFavoriteBeverages)\(emoji2). And finally my future goals are \(fututreGoals)\(emoji3)."
+var lifeStory = "My name is \(myFirstName) \(myLastName). I'm \(myAge). I was burn in \(myBirthYear) in \(myBirthMonth). My height is \(myHeight) and my weight is \(myWeight). I'm currently a student: \(isStudent). I have \(numberOfHobbies) hobbies, these are \(myHobby). My hobbies are creative: \(isHobbyCreative). My favorite number is \(myFavoriteNumber) and my favorite color is \(myFavoriteColor)\(🔵emoji1). Also I have some favorite beverages, these are \(myFavoriteBeverages)\(emoji2). And finally my future goals are \(fututreGoals)\(emoji3)."
 
 //Step 4:
 print(lifeStory)

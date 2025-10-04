@@ -42,7 +42,7 @@ for number in 1...100 {
 print("_____________________")
 
 // Temperature Converter
-print("PROBLEM 3 / UNIQUE CHARACTERS:")
+print("PROBLEM 3 / TEMPERATURE COMVERTER:")
 
 var temperature: Double = 100
 var unit: String = "C"
@@ -97,15 +97,15 @@ shoppingList.append("Butter")
 shoppingList.append("Noodles")
 shoppingList.append("Lemonade")
 shoppingList.append("Chocolate")
-print("\nAdded butter, noodles, lemonade, chocolate to the shoping list")
+print("\nAdded \(shoppingList.joined(separator: " ,")) to the shoping list")
 
 print("\nDisplay shopping list:")
 for item in shoppingList {
     print(item)
 }
 
-shoppingList.remove(at: 1)
-print("\nButter was removed from shopping list")
+let removedItem = shoppingList.remove(at: 1)
+print("\n\(removedItem) was removed from shopping list")
 
 print("\nDisplay updated shoping list:")
 if shoppingList.isEmpty{
@@ -128,11 +128,14 @@ print("Enter sentence: \(sentence)")
 
 let lowercasedSentence = sentence.lowercased()
 let cleanedSentence = lowercasedSentence.components(separatedBy: CharacterSet.punctuationCharacters).joined()
-let wordsSet = cleanedSentence.split(separator: " ")
+//(components(separatedBy:)строку разбивает на спроку подстрок
+//(CharacterSet.punctuationCharacters) разделители это знаки препинания
+//(joined()) все элементы массива соединает обратно в массив
+let wordsSet = cleanedSentence.split(separator: " ") //делит строку на массив по пробелам 
 
 var wordFrequency: [String: Int] = [:]
 
-for word in sentence {
+for word in wordsSet {
     let wordString = String(word)
     
     if let count = wordFrequency[wordString] {
@@ -167,8 +170,8 @@ func fibonacci(_ n: Int) -> [Int]{
     var result: [Int] = [num1, num2]
     
     for _ in 0..<n {
-        let num3 = num1 + num2
-        result.append(num3)
+        let num3 = num1 + num2 // х=0+1
+        result.append(num3) //добавляем num3 в массив
         num1 = num2
         num2 = num3
     }
@@ -184,10 +187,10 @@ print("_____________________")
 print("PROBLEM 7 / GRADE CALCULATOR:")
 
 let studentList: [String: Int] = [
-    "Sanzhar": 96
-    "Amina": 79
-    "Miras": 83
-    "Alina": 75
+    "Sanzhar": 96,
+    "Amina": 79,
+    "Miras": 83,
+    "Alina": 75,
     "Bolat": 70
 ]
 
@@ -219,9 +222,10 @@ print("PROBLEM 8 / PALINDROME CHACKER:")
 let text: String = "window"
 
 func isPalindrom(_ text: String) -> Bool {
-    let characters = Array(text.lowercased())
+    let characters = Array(text.lowercased()) //строку превращяем в массив символов
     var firstIndex = 0
     var lastIndex = characters.count - 1
+    
     while firstIndex < lastIndex{
         if characters[firstIndex] != characters[lastIndex]{
             return false
@@ -249,13 +253,13 @@ var num2: Double = 2
 let operation: String = "+"
 var result: Double?
 
-func sum(_ num1: Double, _ num2: Double) -> Double? {
+func sum(_ num1: Double, _ num2: Double) -> Double {
     return num1 + num2
 }
-func subtract(_ num1: Double, _ num2: Double) -> Double? {
+func subtract(_ num1: Double, _ num2: Double) -> Double {
     return num1 - num2
 }
-func multiply(_ num1: Double, _ num2: Double) -> Double? {
+func multiply(_ num1: Double, _ num2: Double) -> Double {
     return num1 * num2
 }
 func divide(_ num1: Double, _ num2: Double) -> Double? {
@@ -293,7 +297,7 @@ let word1: String = "may"
 let word2: String = "morning"
 
 func hasUniqueCharacters(_ text: String) -> Bool {
-    var characters: Set<Character> = []
+    var characters: Set<Character> = [] //создаем пустое множество символов
     
     for char in text {
         if characters.contains(char) {
